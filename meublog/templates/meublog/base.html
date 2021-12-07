@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block titulo %}{% endblock %}</title>
+        <meta name="description" content="meublog">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+        <div id="content">    
+            {% block conteudo %}
+            {% endblock %}
+        </div> <!--content-->
+
+        <div id="sidebar">
+            <h2>Meu Blog</h2>
+            <p>Este é o meu Blog</p>
+        </div> <!--sidebar-->
+
+        
+
+    <script src="{% static 'js/main.js' %}" async defer></script>
+    </body>
+</html>

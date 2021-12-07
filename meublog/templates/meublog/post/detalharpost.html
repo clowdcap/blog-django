@@ -1,0 +1,35 @@
+{% extends 'meublog/base.html' %}
+
+{% block titulo %}Meu Blog{% endblock %}
+
+{% block conteudo %}
+
+    <h1>{{ post.titulo }}</h1>
+    <p class="date">
+        Publicado em {{ post.publicado }} por {{ post.autor }}
+    </p> <!--date-->
+
+    <p>
+        {{ post.corpo|linebreaks }}
+    </p>
+    <br>
+    <h4 style="margin-right: 0 5px;">
+        <a href="{% url 'meublog:comentar_post' post.id %}">Comentar</a>
+    </h4>
+
+    {% for c in comentario %}
+        <p>Comentario de {{ c.nome }}</p>
+    {% endfor %}
+
+    <h4 style="margin-right: 0 5px;">
+        
+    </h4>
+
+    <!-- URL SHARE EMAIL -->
+    <!-- DEIXAR OFF ATE APLICAÇÃO REAL -->
+    
+    <!--p style="margin-right: 0 5px;">
+        <a href="{% url 'meublog:share_post' post.id %}">Compartilhar esse post</a>
+    </p-->
+
+{% endblock %}
